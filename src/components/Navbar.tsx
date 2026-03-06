@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
@@ -59,7 +60,7 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-cream/95 backdrop-blur-md shadow-[0_1px_0_rgba(201,169,110,0.2)]"
+            ? "bg-charcoal/97 backdrop-blur-md shadow-[0_1px_0_rgba(212,168,67,0.3)]"
             : "bg-transparent"
         }`}
       >
@@ -68,22 +69,26 @@ export default function Navbar() {
             {/* Logo */}
             <button
               onClick={() => handleNavClick("#hero")}
-              className="cursor-pointer relative z-10"
+              className="cursor-pointer relative z-10 flex items-center gap-3"
             >
-              <span
-                className={`font-heading text-2xl tracking-[0.15em] font-semibold transition-colors duration-500 ${
-                  isScrolled ? "text-charcoal" : "text-cream"
-                }`}
-              >
-                ASCHER
-              </span>
-              <span
-                className={`font-heading text-2xl tracking-[0.15em] font-light ml-2 transition-colors duration-500 ${
-                  isScrolled ? "text-gold" : "text-gold-light"
-                }`}
-              >
-                DESIGNS
-              </span>
+              <div className="relative w-10 h-10 shrink-0">
+                <Image
+                  src="/images/logo.jpeg"
+                  alt="Ascher Interior Design Logo"
+                  fill
+                  className="object-contain rounded-sm"
+                  sizes="40px"
+                  priority
+                />
+              </div>
+              <div className="leading-tight">
+                <span className="block font-heading text-xl tracking-[0.18em] font-semibold text-cream">
+                  ASCHER
+                </span>
+                <span className="block font-body text-[9px] tracking-[0.35em] uppercase text-gold font-medium -mt-0.5">
+                   DESIGN
+                </span>
+              </div>
             </button>
 
             {/* Desktop Nav */}
@@ -93,13 +98,9 @@ export default function Navbar() {
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
                   className={`cursor-pointer relative font-body text-[13px] tracking-[0.12em] uppercase transition-colors duration-300 ${
-                    isScrolled
-                      ? activeSection === link.href.slice(1)
-                        ? "text-gold"
-                        : "text-charcoal hover:text-gold"
-                      : activeSection === link.href.slice(1)
+                    activeSection === link.href.slice(1)
                       ? "text-gold"
-                      : "text-cream/80 hover:text-cream"
+                      : "text-cream/75 hover:text-cream"
                   }`}
                 >
                   {link.label}
@@ -117,13 +118,7 @@ export default function Navbar() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className={`lg:hidden cursor-pointer z-50 transition-colors duration-300 ${
-                isMobileOpen
-                  ? "text-cream"
-                  : isScrolled
-                  ? "text-charcoal"
-                  : "text-cream"
-              }`}
+              className="lg:hidden cursor-pointer z-50 text-cream transition-colors duration-300 hover:text-gold"
               aria-label={isMobileOpen ? "Close menu" : "Open menu"}
             >
               {isMobileOpen ? <X size={24} /> : <Menu size={24} />}

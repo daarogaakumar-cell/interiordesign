@@ -99,7 +99,7 @@ export default function Portfolio() {
       : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-28 md:py-36 bg-cream">
+    <section id="portfolio" className="py-14 md:py-20 bg-[#e8f3ec]">
       <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-14">

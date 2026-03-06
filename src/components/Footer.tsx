@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUp } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -10,18 +11,29 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-charcoal border-t border-white/5">
+    <footer className="bg-charcoal border-t border-gold/20">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-2 lg:col-span-1">
-            <div className="mb-4">
-              <span className="font-heading text-xl tracking-[0.15em] text-cream font-semibold">
-                ASCHER
-              </span>
-              <span className="font-heading text-xl tracking-[0.15em] text-gold font-light ml-1.5">
-                DESIGNS
-              </span>
+            <div className="flex items-center gap-3 mb-5">
+              <div className="relative w-12 h-12 shrink-0">
+                <Image
+                  src="/images/logo.jpeg"
+                  alt="Ascher Interior Design"
+                  fill
+                  className="object-contain rounded-sm"
+                  sizes="48px"
+                />
+              </div>
+              <div className="leading-tight">
+                <span className="block font-heading text-lg tracking-[0.18em] font-semibold text-cream">
+                  ASCHER
+                </span>
+                <span className="block font-body text-[9px] tracking-[0.3em] uppercase text-gold font-medium -mt-0.5">
+                     .    .      DESIGN
+                </span>
+              </div>
             </div>
             <p className="font-body text-warm-gray-light text-sm leading-relaxed max-w-xs">
               Luxury interior design studio crafting timeless spaces that

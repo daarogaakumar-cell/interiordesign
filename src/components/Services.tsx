@@ -62,10 +62,10 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="services" className="py-28 md:py-36 bg-charcoal relative overflow-hidden">
+    <section id="services" className="py-14 md:py-20 bg-charcoal relative overflow-hidden">
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(201,169,110,1) 1px, transparent 0)`,
+        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(212,168,67,1) 1px, transparent 0)`,
         backgroundSize: '40px 40px'
       }} />
 

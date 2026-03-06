@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-charcoal: #1a1a1a;
-  --color-charcoal-light: #2d2d2d;
-  --color-gold: #c9a96e;
-  --color-gold-light: #dfc599;
-  --color-gold-dark: #b08d4f;
-  --color-cream: #faf8f5;
-  --color-cream-dark: #f0ece5;
-  --color-warm-gray: #8a8580;
-  --color-warm-gray-light: #b5b0aa;
-  --color-warm-gray-dark: #6b6560;
+  /* Deep forest green palette — matched to logo */
+  --color-charcoal:       #0b3d2e;   /* deep forest green  */
+  --color-charcoal-light: #155740;   /* mid forest green   */
+  --color-gold:           #d4a843;   /* rich amber-gold — vivid against green */
+  --color-gold-light:     #e8c96b;   /* bright champagne gold */
+  --color-gold-dark:      #a8841f;   /* deep antique gold */
+  --color-cream:          #f5f1e6;   /* warm parchment ivory */
+  --color-cream-dark:     #e9e2cc;   /* deeper parchment */
+  --color-warm-gray:      #6d8b7b;   /* sage green-gray */
+  --color-warm-gray-light:#9db5a8;   /* light sage */
+  --color-warm-gray-dark: #4e6e5e;   /* deep sage */
 }
 
 html {
@@ -20,8 +21,8 @@ html {
 }
 
 body {
-  background-color: #faf8f5;
-  color: #1a1a1a;
+  background-color: #f5f1e6;
+  color: #0b3d2e;
   font-family: var(--font-raleway), system-ui, sans-serif;
 }
 
@@ -34,22 +35,22 @@ body {
 }
 
 ::selection {
-  background-color: #c9a96e;
-  color: #1a1a1a;
+  background-color: #d4a843;
+  color: #0b3d2e;
 }
 
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #faf8f5;
+  background: #0b3d2e;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9a96e;
+  background: #d4a843;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #b08d4f;
+  background: #a8841f;
 }
 
 /* Utility animation classes */
